@@ -9,7 +9,7 @@ body {
     margin: 0;
     height: 100vh;
     font-family: 'Georgia', serif; /* Fuente más formal */
-    font-size: 18px;
+    font-size: 19px;
     background-color: #F4F4F9;
     color: #333333; /* Texto en un gris oscuro */
 }
@@ -121,5 +121,5 @@ h2::after {
 }
 
 h2::before {
-    right: 50px;
+    right: 50px; 
 }
