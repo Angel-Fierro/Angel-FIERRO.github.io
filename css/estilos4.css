@@ -5,10 +5,13 @@
 }
 
 body {
-    font-family: Arial;
-    text-align: center;
-    background: #87f602; /* Fondo original verde */
-    position: relative; /* Para posicionar el fondo desenfocado */
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    font-family: 'Georgia', serif; /* Fuente más formal */
+    font-size: 18px;
+    background-color: #F4F4F9;
+    color: #333333; /* Texto en un gris oscuro */
 }
 
 body::before {
@@ -18,16 +21,17 @@ body::before {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../img/4.webp'); 
-    background-size: cover; 
-    background-position: center; 
-    background-repeat: no-repeat; 
-    filter: blur(5px); /* Desenfoque más suave */
-    z-index: -1; 
+    background-image: url('../img/4.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(4px) brightness(0.7); /* Reducimos el desenfoque y ajustamos el brillo */
+    z-index: -1;
 }
 
 a {
     text-decoration: none;
+    color: inherit; /* Los enlaces mantendrán el color del texto */
 }
 
 .contenedor-principal {
@@ -43,16 +47,8 @@ a {
     margin: 25px;
 }
 
-.contenedor_tarjeta a {
-    display: inline-block;
-}
-
 .contenedor_tarjeta:hover figure {
     transform: perspective(600px) rotateY(180deg);
-}
-
-.contenedor_tarjeta:hover figure img {
-    filter: blur(2.5px);
 }
 
 figure {
@@ -62,7 +58,6 @@ figure {
     position: relative;
     transition: all ease 0.8s;
     transform-style: preserve-3d;
-    transform: perspective(600px) rotateY(0deg);
 }
 
 figure .frontal,
@@ -74,7 +69,7 @@ figure .trasera {
 
 figure .frontal {
     display: block;
-    background: #000000;
+    background: #fafafa;
 }
 
 figure .trasera {
@@ -84,20 +79,29 @@ figure .trasera {
     color: #FAF7F0;
     transform: perspective(600px) rotateY(180deg);
     backface-visibility: hidden;
-    overflow: auto;
     box-shadow: 1px 0px 45px 15px rgba(0, 0, 0, 0.75);
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo oscuro para mejor legibilidad */
 }
 
 figure .trasera p {
-    font-size: 22px;
-    color: #00e8ff; /* Color "Papaya Whip" para buen contraste */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Sombra más sutil */
+    font-size: 20px;
+    color: #FFD700; /* Color dorado para un toque elegante */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
 }
 
 figure .trasera h1 {
-    font-size: 34px;
+    font-size: 28px;
     font-weight: 700;
-    color: #ffffff; /* Color blanco */
+    color: #ffffff;
+}
+
+h2 {
+    font-size: 48px;
+    font-weight: bold;
+    text-shadow: 3px 3px 5px black;
+    position: relative;
+    color: #FFD700; /* Color dorado */
+    text-align: center;
 }
 
 h2::after,
@@ -105,30 +109,17 @@ h2::before {
     content: '';
     position: absolute;
     width: 300px;
-    height: 20px;
-    background-color: currentColor; /* Usa el color del texto */
-    top: 0.7em;
+    height: 4px;
+    background-color: currentColor;
+    top: 1em;
     transform: scale(1.0);
     transition: all 0.6s ease-in;
-    top: 8%;
-}
-
-h2:hover::after,
-h2:hover::before {
-    transform: scale(0.1);
 }
 
 h2::after {
-    left: 320px;
+    left: 50px;
 }
 
 h2::before {
-    right: 320px;
-}
-
-h2 {
-    font-size: 50px;
-    font-weight: bold;
-    text-shadow: 3px 3px 5px black;
-    position: relative;
+    right: 50px;
 }
